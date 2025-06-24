@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "Goldcast Email Matcher",
+  "version": "1.0",
+  "description": "Automatically select registrants from a list of emails on Goldcast event pages",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://admin.goldcast.io/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://admin.goldcast.io/events/*/registration-new/registrants*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Goldcast Email Matcher"
+  },
+  "icons": {
+    "16": "icon16.png",
+    "48": "icon48.png",
+    "128": "icon128.png"
+  }
+}
