@@ -75,13 +75,16 @@
       background-color: #d1d5db;
       cursor: not-allowed;
     }
-    .secondary-btn {
-      background-color: #f3f4f6;
-      color: #374151;
-      border: 1px solid #d1d5db;
+    .stop-btn {
+      background-color: #dc2626;
+      color: white;
     }
-    .secondary-btn:hover {
-      background-color: #e5e7eb;
+    .stop-btn:hover {
+      background-color: #b91c1c;
+    }
+    .stop-btn:disabled {
+      background-color: #d1d5db;
+      cursor: not-allowed;
     }
     .status {
       padding: 12px;
@@ -131,8 +134,7 @@
     </div>
     
     <div class="button-group">
-      <button id="startBtn" class="primary-btn">Start Matching</button>
-      <button id="stopBtn" class="secondary-btn">Stop</button>
+      <button id="actionBtn" class="primary-btn">Start Matching</button>
     </div>
     
     <div id="status" class="status" style="display: none;"></div>

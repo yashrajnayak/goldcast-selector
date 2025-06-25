@@ -1,8 +1,7 @@
 // popup.js
 document.addEventListener('DOMContentLoaded', function() {
   const emailListTextarea = document.getElementById('emailList');
-  const startBtn = document.getElementById('startBtn');
-  const stopBtn = document.getElementById('stopBtn');
+  const actionBtn = document.getElementById('actionBtn');
   const statusDiv = document.getElementById('status');
 
   let isRunning = false;
@@ -19,7 +18,24 @@ document.addEventListener('DOMContentLoaded', function() {
     chrome.storage.local.set({ emailList: emailListTextarea.value });
   });
 
-  startBtn.addEventListener('click', async function() {
+  actionBtn.addEventListener('click', async function() {
+    if (isRunning) {
+      // Stop functionality
+      isRunning = false;
+      updateUI();
+      
+      try {
+        const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
+        await chrome.tabs.sendMessage(tab.id, { action: 'stopMatching' });
+        showStatus('Matching stopped', 'error');
+      } catch (error) {
+        console.error('Error stopping matching:', error);
+        showStatus('Matching stopped (forced)', 'error');
+      }
+      return;
+    }
+
+    // Start functionality
     const emailText = emailListTextarea.value.trim();
     if (!emailText) {
       showStatus('Please enter at least one email address', 'error');
@@ -70,20 +86,6 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
-  stopBtn.addEventListener('click', async function() {
-    isRunning = false;
-    updateUI();
-    
-    try {
-      const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
-      await chrome.tabs.sendMessage(tab.id, { action: 'stopMatching' });
-      showStatus('Matching stopped', 'error');
-    } catch (error) {
-      console.error('Error stopping matching:', error);
-      showStatus('Matching stopped (forced)', 'error');
-    }
-  });
-
   // Listen for messages from content script
   chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message.action === 'updateStatus') {
@@ -103,9 +105,13 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
   function updateUI() {
-    startBtn.disabled = isRunning;
-    stopBtn.disabled = !isRunning;
-    startBtn.textContent = isRunning ? 'Running...' : 'Start Matching';
+    if (isRunning) {
+      actionBtn.textContent = 'Stop';
+      actionBtn.className = 'stop-btn';
+    } else {
+      actionBtn.textContent = 'Start Matching';
+      actionBtn.className = 'primary-btn';
+    }
   }
 
   function showStatus(message, type) {
