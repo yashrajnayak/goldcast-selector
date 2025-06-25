@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "Goldcast Email Matcher",
+  "name": "Goldcast Selector",
   "version": "1.0",
   "description": "Automatically select registrants from a list of emails on Goldcast event pages",
   "permissions": [
@@ -19,7 +19,7 @@
   ],
   "action": {
     "default_popup": "popup.html",
-    "default_title": "Goldcast Email Matcher"
+    "default_title": "Goldcast Selector"
   },
   "icons": {
     "16": "icon16.png",

@@ -336,7 +336,7 @@ function sendMessage(action, message, type = '', progress = '') {
 }
 
 // Initialize when script loads
-console.log('Goldcast Email Matcher content script loaded');
+console.log('Goldcast Selector content script loaded');
 
 // Check if we're on the right page
 if (window.location.href.includes('admin.goldcast.io') && window.location.href.includes('registrants')) {
