@@ -2,6 +2,8 @@
 
 A Chrome extension that automatically selects registrants from a list of email addresses on Goldcast event pages. Save time on bulk registrant selection with automated email matching and checkbox selection across multiple pages.
 
+<img width="451" alt="image" src="https://github.com/user-attachments/assets/ed6bc584-a48a-44ee-b561-833bef2a40db" />
+
 ## ✨ Features
 
 - **Smart Email Detection**: Automatically finds email addresses on Goldcast registrant pages
