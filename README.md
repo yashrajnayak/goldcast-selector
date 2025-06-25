@@ -1,6 +1,6 @@
 # Goldcast Selector
 
-A Chrome extension that automatically selects registrants from a list of email addresses on Goldcast event pages.
+A Chrome extension that automatically selects registrants from a list of email addresses on Goldcast event pages. Save time on bulk registrant selection with automated email matching and checkbox selection across multiple pages.
 
 ## ✨ Features
 
@@ -10,15 +10,19 @@ A Chrome extension that automatically selects registrants from a list of email a
 - **Real-time Progress**: Shows live progress updates and match counts
 - **Persistent Storage**: Saves your email list between browser sessions
 
-## 🚀 Quick Start
+## 💾 Installation
 
-### Installation
-1. Open Chrome and navigate to `chrome://extensions/`
-2. Enable "Developer mode" (toggle in top right corner)
-3. Click "Load unpacked" and select this folder
-4. The extension icon will appear in your Chrome toolbar
+1. Download the repository as a ZIP file
+2. Extract the ZIP file to a folder on your computer
+3. Open your browser and navigate to the extensions page:
+     - **Chrome**: `chrome://extensions/`
+     - **Edge**: `edge://extensions/`
+     - **Brave**: `brave://extensions/`
+     - **Opera**: `opera://extensions/`
+4. Enable "Developer mode" by toggling the switch, then click "Load unpacked" button and select the extracted extension folder
+5. The extension icon should appear in your browser toolbar
 
-### Usage
+### 🚀 Usage
 1. **Navigate** to a Goldcast event registrants page:
    ```
    https://admin.goldcast.io/events/[event-id]/registration-new/registrants
@@ -94,15 +98,3 @@ No special formatting required - the extension handles validation automatically.
 - Click "Stop" then "Start Matching" to restart
 - Refresh the page and try again
 - Check if you've reached the last page
-
-## 🔄 Development
-
-To modify the extension:
-1. Edit the relevant files in this directory
-2. Go to `chrome://extensions/`
-3. Click the refresh icon on the "Goldcast Email Matcher" extension
-4. Test your changes on a Goldcast page
-
----
-
-**Built for efficiency** - Save time on bulk registrant selection with automated email matching and checkbox selection across multiple pages.
