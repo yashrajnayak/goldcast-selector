@@ -1,8 +1,8 @@
 # Goldcast Selector
 
-A Chrome extension that automatically selects registrants from a list of email addresses on Goldcast event pages. Save time on bulk registrant selection with automated email matching and checkbox selection across multiple pages.
+A Chrome extension that automatically selects registrants on Goldcast event pages. Save time on bulk registrant selection with automated email matching and checkbox selection across multiple pages.
 
-<img width="451" alt="image" src="https://github.com/user-attachments/assets/ed6bc584-a48a-44ee-b561-833bef2a40db" />
+<img width="450" alt="image" src="https://github.com/user-attachments/assets/c425afbc-0f9a-4ae3-a43b-1051520ee092" />
 
 ## ✨ Features
 
